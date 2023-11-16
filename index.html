@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expanding Cards</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: cursive;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 90vw;
+        }
+
+        .barImage {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            flex: 0.5;
+            position: relative;
+            transition: flex 0.5s ease-in;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .barImage h3 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            opacity: 0;
+        }
+
+        .active {
+            flex: 5;
+        }
+
+        .barImage.active h3 {
+            opacity: 1;
+            transition: opacity 0.4s ease-in 0.4s;
+        }
+
+        @media(max-width:480px) {
+            .container {
+                width: 100vw;
+            }
+
+            .barImage:nth-of-type(4),
+            .barImage:nth-of-type(5) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="barImage active"
+            style="background-image: url('img1.jpg');">
+            <h3>Explore The World</h3>
+        </div>
+
+        <div class="barImage"
+            style="background-image: url('img2.jpg');">
+            <h3>Make Friend's</h3>
+        </div>
+
+        <div class="barImage"
+            style="background-image: url('img3.jpg');">
+            <h3>Dream Big</h3>
+        </div>
+
+        <div class="barImage"
+            style="background-image: url('img4.jpg');">
+            <h3>Create Your Own Sunshine</h3>
+        </div>
+
+        <div class="barImage"
+            style="background-image: url('img5.jpg');">
+            <h3>Live with Purpose, Love with Passion</h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
